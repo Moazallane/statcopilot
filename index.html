@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>StatCopilot</title>
+  </head>
+<body>
+  <h1>StatCopilot: t-test MVP</h1>
+  <form id="ttest-form">
+    <div>
+      <label for="iv">Independent Variable (IV):</label>
+      <input type="text" id="iv" name="iv" placeholder="e.g. group" required />
+    </div>
+    <div>
+      <label for="dv">Dependent Variable (DV):</label>
+      <input type="text" id="dv" name="dv" placeholder="e.g. score" required />
+    </div>
+    <button type="submit">Run t-test</button>
+  </form>
+  <script>
+    const form = document.getElementById('ttest-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const iv = document.getElementById('iv').value;
+      const dv = document.getElementById('dv').value;
+      alert(`Running t-test on IV="${iv}" vs DV="${dv}"…`);
+    });
+  </script>
+</body>
+</html>
